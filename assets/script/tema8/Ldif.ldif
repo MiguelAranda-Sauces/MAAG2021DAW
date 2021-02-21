@@ -1,0 +1,97 @@
+﻿dn: dc=maagdns,dc=local
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: miguel
+dc: maagdns
+
+dn: cn=admin,dc=maagdns,dc=local
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword: {SSHA}F45nGRQUaVvIiyQTnPPoTcgikQxiw/3Y
+
+dn: ou=people,dc=maagdns,dc=local
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=maagdns,dc=local
+objectClass: organizationalUnit
+ou: groups
+
+dn: uid=zipi,ou=people,dc=maagdns,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: zipi
+sn: Wiz
+loginShell: /bin/bash
+gidNumber: 678
+homeDirectory: /home/people/zipi
+uidNumber: 2001
+uid: zipi
+userPassword: {MD5}ZLatEDRa80bjczyGisiQEg==
+
+dn: cn=gemelos,ou=groups,dc=maagdns,dc=local
+objectClass: top
+objectClass: posixGroup
+gidNumber: 678
+cn: gemelos
+memberUid: zape
+memberUid: zipi
+
+dn: uid=zape,ou=people,dc=maagdns,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: zape
+sn: Wiz
+userPassword: {SSHA}E4POXb4iNwzByTMIMQeddzi0IkKcm7Qg
+loginShell: /bin/bash
+uidNumber: 2000
+gidNumber: 678
+homeDirectory: /home/people/zape
+uid: zape
+
+dn: uid=clinton,ou=people,dc=maagdns,dc=local
+objectClass: posixAccount
+objectClass: top
+objectClass: inetOrgPerson
+gidNumber: 0
+givenName: Bill
+sn: clinton
+displayName: Bill clinton
+uid: clinton
+cn: Bill clinton
+uidNumber: 58049
+userPassword: {MD5}ZLatEDRa80bjczyGisiQEg==
+homeDirectory: /var/www/html/grupo
+
+dn: cn=presidentes,ou=groups,dc=maagdns,dc=local
+objectClass: groupOfUniqueNames
+objectClass: top
+uniqueMember: uid=clinton,ou=people,dc=maagdns,dc=local
+uniqueMember: uid=trump,ou=people,dc=maagdns,dc=local
+cn: presidentes
+
+dn: uid=trump,ou=people,dc=maagdns,dc=local
+objectClass: posixAccount
+objectClass: top
+objectClass: inetOrgPerson
+gidNumber: 0
+sn: trump
+givenName: Donald
+displayName: Donald trump
+uid: trump
+homeDirectory: /var/www/html
+cn: Donald trump
+uidNumber: 64219
+userPassword: {MD5}ZLatEDRa80bjczyGisiQEg==
+
+dn: cn=jefes,ou=groups,dc=maagdns,dc=local
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: jefes
+uniqueMember: uid=zipi,ou=people,dc=maagdns,dc=local
+

@@ -1,0 +1,7 @@
+AuthType Basic
+AuthBasicProvider ldap
+AuthName "login...."
+AuthLDAPURL ldap://192.168.3.110/dc=maagdns,dc=local?uid?sub?(objectClass=*)
+AuthLDAPBindDN "cn=admin,dc=maagdns,dc=local"
+AuthLDAPBindPassword paso
+Require ldap-group cn=jefes,ou=groups,dc=maagdns,dc=local
